@@ -1,0 +1,6 @@
+[theme]
+primaryColor="#E32227"            # Bright Red (your brand)
+backgroundColor="#FFF9F4"         # Soft Cream
+secondaryBackgroundColor="#FFE5E1" # Light Red-Pink
+textColor="#1a1a1a"               # Almost Black
+font="sans serif"

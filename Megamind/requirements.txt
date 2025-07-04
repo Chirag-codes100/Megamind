@@ -1,0 +1,11 @@
+pdfplumber              # For PDF text extraction
+PyMuPDF                 # (Optional) For advanced PDF operations/highlighting
+google-generativeai     # Gemini API SDK
+chromadb                # For local vector store, optional for more advanced retrieval
+tqdm                    # (Optional, for progress bars if handling big files)
+python-dotenv           # (Optional, for loading env vars)
+requests
+beautifulsoup4
+pytesseract
+Pillow
+

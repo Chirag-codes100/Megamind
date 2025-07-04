@@ -1,0 +1,18 @@
+import fitz  # PyMuPDF
+
+def highlight_pdf(input_pdf, output_pdf, text, page_number):
+    doc = fitz.open(input_pdf)
+    page = doc[page_number-1]
+    found = False
+    # Try to match the longest substring if the full answer is not found
+    search_text = text.strip().replace('\n', ' ')
+    if len(search_text) > 40:
+        search_text = " ".join(search_text.split()[:5])  # Use first 5 words
+    for inst in page.search_for(search_text, hit_max=16):
+        annot = page.add_highlight_annot(inst)
+        annot.set_colors(stroke=(1, 0, 0))  # Bright Red
+        annot.update()
+        found = True
+    doc.save(output_pdf, garbage=4, deflate=True, clean=True)
+    doc.close()
+    return found
